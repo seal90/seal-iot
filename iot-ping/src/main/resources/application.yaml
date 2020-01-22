@@ -1,0 +1,22 @@
+logging:
+  level:
+    io.rsocket: DEBUG
+    org.springframework.cloud.gateway.rsocket: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+  port: 8078
+
+spring.cloud.gateway.rsocket.client:
+  route-id: 5
+  service-name: iot-ping-service-name
+  tags:
+    INSTANCE_NAME: iot-ping-INSTANCE_NAME
+  broker:
+    host: 127.0.0.1
+    port: 7001
